@@ -9,19 +9,6 @@ from lib.tools import console
 
 Version = 2.2
 
-console.print('''
-                      _____                                 
-    /\               / ____|                                
-   /  \   _ __  _ __| (___   ___ __ _ _ __  _ __   ___ _ __ 
-  / /\ \ | '_ \| '_ \\___ \ / __/ _` | '_ \| '_ \ / _ \ '__|
- / ____ \| |_) | |_) |___) | (_| (_| | | | | | | |  __/ |   
-/_/    \_\ .__/| .__/_____/ \___\__,_|_| |_|_| |_|\___|_|   
-         | |   | |                                          
-         |_|   |_|                                          
-''', style='blink bold green')
-
-console.print('                             [italic green]ParadiseDuo[/italic green]  [{}]'.format(Version))
-
 
 def printUse():
     console.print('''

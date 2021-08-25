@@ -24,14 +24,15 @@ class ReadFileCheck(Base):
                             'Landroid/content/Context;->openFileOutput' in line or \
                             'Landroid/content/Context;->getDir' in line:
                         v = line.strip().split(',')[2].replace('}', '')
-                        for j in range(i, count):
+                        value = None
+                        for j in range(0, i):
                             ll = lines[j]
                             if v in ll and 'const/4' in ll:
                                 value = ll.strip().split(' ')[-1]
-                                if value != '0x0':
-                                    result = name + ' : ' + str(count - i)
-                                    if result not in results:
-                                        results.append(result)
+                        if value and value != '0x0':
+                            result = name + ' : ' + str(count - i)
+                            if result not in results:
+                                results.append(result)
         Info(key=self.__class__, title=TITLE, level=LEVEL, info=INFO, result='\n'.join(results)).description()
 
 

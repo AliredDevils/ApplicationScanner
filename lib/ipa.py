@@ -197,7 +197,7 @@ def iOSAuthority(appInfoPath):
         pl = plistlib.load(fp)
     for key in pl.keys():
         if 'UsageDescription' in key:
-            results.append(key + ":" + pl[key])
+            results.append(str(key) + ":" + str(pl[key]))
     Info(key='Info', title='应用权限列表', level=0, info='查看应用使用的所有权限', result="\n".join(results)).description()
 
 
